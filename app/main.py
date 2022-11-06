@@ -25,4 +25,4 @@ app.add_middleware(
 
 @app.get('/')
 async def root():
-    return {'message': f"I'm alive {datetime.now()}"}
+    return {'msg': f"I'm alive {datetime.now()}"}

@@ -3,8 +3,8 @@ from fastapi import APIRouter, HTTPException, Depends
 from fastapi.responses import RedirectResponse
 from schemas import url as schemas
 from models.url import UrlModel
-from app.utils.jwt import get_current_user
-from app.utils.random import create_random_key
+from utils.jwt import get_current_user
+from utils.random import create_random_key
 
 
 router = APIRouter(

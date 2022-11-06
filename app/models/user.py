@@ -3,7 +3,7 @@ from datetime import datetime
 from pydantic import BaseModel, Field
 from .pyobject_id import PyObjectId
 from models.database import db
-from app.utils.auth import get_hashed_password
+from utils.auth import get_hashed_password
 
 collection = db['user']
 collection.create_index([('email', 1)])
