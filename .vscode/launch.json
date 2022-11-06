@@ -1,0 +1,27 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: FastAPI",
+            "type": "python",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "main:app",
+                "--reload"
+            ],
+            "jinja": true,
+            "justMyCode": true,
+            "env": {
+                "PYTHONPATH": "./app",
+                "JWT_SECRET_KEY": "my-32-character-ultra-secure-and-ultra-long-secret",
+                "JWT_REFRESH_SECRET_KEY": "my-32-character-ultra-secure-and-ultra-long-secret",
+                "ENV": "dev",
+                "MONGO_URI":"mongodb://db/urlShortner"
+            }
+        }
+    ]
+}
