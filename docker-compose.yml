@@ -10,7 +10,6 @@ services:
             - ENV=development
             - PYTHONPATH=/app
             - JWT_SECRET_KEY=my-32-character-ultra-secure-and-ultra-long-secret
-            - JWT_REFRESH_SECRET_KEY=my-32-character-ultra-secure-and-ultra-long-secret
         volumes:
             - ./app:/app
     url_shortner_db:
