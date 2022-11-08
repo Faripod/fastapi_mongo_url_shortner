@@ -7,15 +7,15 @@ from models.database import db
 
 collection = db['urls']
 collection.create_index([('target_url', 1)])
-VALIDITY_TIME = 1 # minutes
+VALIDITY_TIME = 30 # minutes
 
 
 class UrlModel(BaseModel):
     id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
     key: str
     target_url : str
-    created_at: Optional[datetime] = datetime.now()
-    updated_at: Optional[datetime] = datetime.now()
+    created_at: Optional[datetime] = datetime.utcnow()
+    updated_at: Optional[datetime] = datetime.utcnow()
 
     class Config:
         allow_population_by_field_name = True
@@ -36,7 +36,7 @@ class UrlModel(BaseModel):
         }
 
     def create_url(self):
-        url = collection.insert_one(self.dict(by_alias=True))
+        item = collection.insert_one(self.dict(by_alias=True))
         return {"url" : f"http://localhost:8000/{self.key}"}
 
     @staticmethod
@@ -51,4 +51,4 @@ class UrlModel(BaseModel):
 
     @staticmethod
     def check_url_validity(item):
-        return item['created_at'] + timedelta(minutes=VALIDITY_TIME) > datetime.now()
+        return item['created_at'] + timedelta(minutes=VALIDITY_TIME) > datetime.utcnow()
