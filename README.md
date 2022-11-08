@@ -10,7 +10,7 @@ This variables are used to configure the application.
 ```bash
 export JWT_SECRET_KEY="my-32-character-ultra-secure-and-ultra-long-secret"
 export ENV="dev"
-export MONGO_URI="mongodb://db/urlShortner"
+export MONGO_URI="mongodb://localhost"
 export PYTHONPATH=./app
 ```
 
