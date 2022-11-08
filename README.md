@@ -11,7 +11,7 @@ This variables are used to configure the application.
 export JWT_SECRET_KEY="my-32-character-ultra-secure-and-ultra-long-secret"
 export ENV="dev"
 export MONGO_URI="mongodb://db/urlShortner"
-export PYTHONPATH=/app
+export PYTHONPATH=./app
 ```
 
 ## Usage
